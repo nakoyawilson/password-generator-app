@@ -2,12 +2,11 @@
 
 :root {
   --font: "JetBrains Mono", monospace;
-  /* --background: linear-gradient(
+  --background: linear-gradient(
     180deg,
     hsl(248, 15%, 11%) 0%,
     hsl(255, 22%, 4%) 100%
-  ); */
-  --background: hsl(255, 22%, 4%);
+  );
   --almost-white: hsl(252, 11%, 91%);
   --dark-gray: hsl(248, 10%, 15%);
   --grey: hsl(251, 9%, 53%);
