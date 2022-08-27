@@ -73,8 +73,14 @@ const symbolCharacters = [
 
 charLength.textContent = rangeLength.value;
 
+const updateSliderColor = (slider) => {
+  let value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+  slider.style.background = `linear-gradient(to right, hsl(127, 100%, 82%) 0%, hsl(127, 100%, 82%) ${value}%, hsl(248, 15%, 11%) ${value}%, hsl(248, 15%, 11%) 100%`;
+};
+
 rangeLength.addEventListener("change", () => {
   charLength.textContent = rangeLength.value;
+  updateSliderColor(rangeLength);
 });
 
 copyButton.addEventListener("click", () => {
