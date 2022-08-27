@@ -53,24 +53,14 @@ const symbolCharacters = [
   "^",
   "&",
   "*",
-  "(",
-  ")",
   "_",
   "-",
   "+",
   "=",
-  "{",
-  "[",
-  "}",
-  "]",
-  "|",
-  ":",
-  ";",
-  "<",
-  ">",
   "?",
-  "/",
 ];
+
+// !, @, #, $, %, ^, &, or *
 
 charLength.textContent = rangeLength.value;
 
@@ -126,62 +116,35 @@ passwordGenerator.addEventListener("submit", (e) => {
   }
   copyButton.disabled = false;
   const passwordCharacters = [];
-  for (let i = 0; i < passwordLength; i++) {
-    const randomNumber = Math.floor(Math.random() * characterList.length);
-    passwordCharacters.push(characterList[randomNumber]);
-  }
-  if (
-    document.querySelector("#uppercase").checked &&
-    !passwordCharacters.some((ele) => uppercaseCharacters.includes(ele))
-  ) {
-    passwordCharacters.splice(
-      Math.floor(Math.random() * passwordCharacters.length),
-      1
-    );
+  if (document.querySelector("#uppercase").checked) {
     passwordCharacters.push(
       uppercaseCharacters[
         Math.floor(Math.random() * uppercaseCharacters.length)
       ]
     );
   }
-  if (
-    document.querySelector("#lowercase").checked &&
-    !passwordCharacters.some((ele) => lowercaseCharacters.includes(ele))
-  ) {
-    passwordCharacters.splice(
-      Math.floor(Math.random() * passwordCharacters.length),
-      1
-    );
+  if (document.querySelector("#lowercase").checked) {
     passwordCharacters.push(
       lowercaseCharacters[
         Math.floor(Math.random() * lowercaseCharacters.length)
       ]
     );
   }
-  if (
-    document.querySelector("#numbers").checked &&
-    !passwordCharacters.some((ele) => numberCharacters.includes(ele))
-  ) {
-    passwordCharacters.splice(
-      Math.floor(Math.random() * passwordCharacters.length),
-      1
-    );
+  if (document.querySelector("#numbers").checked) {
     passwordCharacters.push(
       numberCharacters[Math.floor(Math.random() * numberCharacters.length)]
     );
   }
-  if (
-    document.querySelector("#symbols").checked &&
-    !passwordCharacters.some((ele) => symbolCharacters.includes(ele))
-  ) {
-    passwordCharacters.splice(
-      Math.floor(Math.random() * passwordCharacters.length),
-      1
-    );
+  if (document.querySelector("#symbols").checked) {
     passwordCharacters.push(
       symbolCharacters[Math.floor(Math.random() * symbolCharacters.length)]
     );
   }
+  for (let i = 0; i < passwordLength - numberChecked; i++) {
+    const randomNumber = Math.floor(Math.random() * characterList.length);
+    passwordCharacters.push(characterList[randomNumber]);
+  }
+  passwordCharacters.sort((a, b) => 0.5 - Math.random());
   let strengthClass;
   let strengthClassText;
   if (passwordLength < 8 || numberChecked === 1) {
