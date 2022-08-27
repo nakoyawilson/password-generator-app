@@ -55,8 +55,8 @@ img {
 }
 
 .length-value {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: calc(24rem / 16);
+  line-height: calc(32rem / 16);
   color: var(--neon-green);
 }
 
@@ -334,6 +334,11 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
   }
 
   .password {
+    font-size: calc(32rem / 16);
+    line-height: calc(42rem / 16);
+  }
+
+  .length-value {
     font-size: calc(32rem / 16);
     line-height: calc(42rem / 16);
   }
