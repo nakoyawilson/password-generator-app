@@ -124,12 +124,63 @@ passwordGenerator.addEventListener("submit", (e) => {
   if (passwordLength === 0 || numberChecked === 0) {
     return false;
   }
-  // TODO: guarantee at least 1 of each character type
   copyButton.disabled = false;
   const passwordCharacters = [];
   for (let i = 0; i < passwordLength; i++) {
     const randomNumber = Math.floor(Math.random() * characterList.length);
     passwordCharacters.push(characterList[randomNumber]);
+  }
+  if (
+    document.querySelector("#uppercase").checked &&
+    !passwordCharacters.some((ele) => uppercaseCharacters.includes(ele))
+  ) {
+    passwordCharacters.splice(
+      Math.floor(Math.random() * passwordCharacters.length),
+      1
+    );
+    passwordCharacters.push(
+      uppercaseCharacters[
+        Math.floor(Math.random() * uppercaseCharacters.length)
+      ]
+    );
+  }
+  if (
+    document.querySelector("#lowercase").checked &&
+    !passwordCharacters.some((ele) => lowercaseCharacters.includes(ele))
+  ) {
+    passwordCharacters.splice(
+      Math.floor(Math.random() * passwordCharacters.length),
+      1
+    );
+    passwordCharacters.push(
+      lowercaseCharacters[
+        Math.floor(Math.random() * lowercaseCharacters.length)
+      ]
+    );
+  }
+  if (
+    document.querySelector("#numbers").checked &&
+    !passwordCharacters.some((ele) => numberCharacters.includes(ele))
+  ) {
+    passwordCharacters.splice(
+      Math.floor(Math.random() * passwordCharacters.length),
+      1
+    );
+    passwordCharacters.push(
+      numberCharacters[Math.floor(Math.random() * numberCharacters.length)]
+    );
+  }
+  if (
+    document.querySelector("#symbols").checked &&
+    !passwordCharacters.some((ele) => symbolCharacters.includes(ele))
+  ) {
+    passwordCharacters.splice(
+      Math.floor(Math.random() * passwordCharacters.length),
+      1
+    );
+    passwordCharacters.push(
+      symbolCharacters[Math.floor(Math.random() * symbolCharacters.length)]
+    );
   }
   let strengthClass;
   let strengthClassText;

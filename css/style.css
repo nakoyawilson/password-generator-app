@@ -3,7 +3,7 @@
 :root {
   --font: "JetBrains Mono", monospace;
   --almost-white: hsl(252, 11%, 91%);
-  --dark-gray: hsl(248, 10%, 15%);
+  --dark-grey: hsl(248, 10%, 15%);
   --grey: hsl(251, 9%, 53%);
   --neon-green: hsl(127, 100%, 82%);
   --orange: hsl(13, 95%, 66%);
@@ -97,7 +97,7 @@ svg {
 }
 
 .password-wrapper {
-  background: var(--dark-gray);
+  background: var(--dark-grey);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,7 +124,7 @@ svg {
 }
 
 .generator {
-  background: var(--dark-gray);
+  background: var(--dark-grey);
   margin-top: 16px;
   padding: 16px;
 }
@@ -145,6 +145,10 @@ svg {
   transition: opacity 0.2s;
   margin-top: 18px;
   display: block;
+}
+
+.slider:focus {
+  outline: 1px solid var(--neon-green);
 }
 
 .slider::-moz-range-progress {
@@ -239,6 +243,14 @@ input[type="checkbox"]:checked + .custom-checkbox {
   background-color: var(--neon-green);
 }
 
+input[type="checkbox"]:focus + .custom-checkbox {
+  border-color: var(--neon-green);
+}
+
+input[type="checkbox"]:checked:focus + .custom-checkbox {
+  background-color: var(--almost-white);
+}
+
 .custom-checkbox::after {
   content: "";
   width: 14px;
@@ -310,7 +322,7 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
 .btn {
   background: var(--neon-green);
   border: 2px solid var(--neon-green);
-  color: var(--dark-gray);
+  color: var(--dark-grey);
   margin-top: 16px;
   display: flex;
   justify-content: center;
