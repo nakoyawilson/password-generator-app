@@ -105,6 +105,11 @@ img {
   gap: 16px;
 }
 
+.copy-btn {
+  color: var(--neon-green);
+  transition: all 0.5s ease-in-out;
+}
+
 .copy-icon {
   height: 20px;
 }
@@ -179,10 +184,65 @@ img {
 }
 
 .checkbox-wrapper {
-  margin-top: 32px;
+  margin-top: 42px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.checkbox-label-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.checkbox-container {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px solid var(--almost-white);
+  background: var(--dark-grey);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+  border-color: var(--neon-green);
+  background-color: var(--neon-green);
+}
+
+.custom-checkbox::after {
+  content: "";
+  width: 14px;
+  height: 12px;
+  background-image: url("../assets/images/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox::after {
+  display: block;
 }
 
 .strength-wrapper {
@@ -236,6 +296,8 @@ img {
 
 .btn {
   background: var(--neon-green);
+  color: var(--dark-gray);
+  border: 2px solid #a4ffaf;
   margin-top: 16px;
   display: flex;
   justify-content: center;
@@ -244,6 +306,7 @@ img {
   width: 100%;
   text-transform: uppercase;
   padding: 18px 18px 17px;
+  transition: all 0.5s ease-in-out;
 }
 
 .arrow-icon {
@@ -288,6 +351,10 @@ img {
     padding: 19px 32px;
   }
 
+  .copy-btn:hover {
+    color: var(--almost-white);
+  }
+
   .copy-icon {
     height: 24px;
   }
@@ -305,6 +372,10 @@ img {
     gap: 20px;
   }
 
+  .checkbox-label-wrapper {
+    gap: 24px;
+  }
+
   .strength-wrapper {
     padding: 21px 32px 20px;
   }
@@ -315,8 +386,8 @@ img {
     padding: 21px 21px 20px;
   }
 
-  .arrow-icon {
-    pointer-events: none;
-    height: 12px;
+  .btn:hover {
+    background: var(--dark-grey);
+    color: var(--neon-green);
   }
 }
