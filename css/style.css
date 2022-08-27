@@ -176,6 +176,7 @@ svg {
   height: 28px;
   border: 0;
   border-radius: 50%;
+  box-sizing: border-box;
   background-color: var(--almost-white);
   border: 2px solid var(--almost-white);
   transition: all 0.2s ease-in-out;
