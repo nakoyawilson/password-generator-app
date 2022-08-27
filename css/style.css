@@ -2,11 +2,6 @@
 
 :root {
   --font: "JetBrains Mono", monospace;
-  --background: linear-gradient(
-    180deg,
-    hsl(248, 15%, 11%) 0%,
-    hsl(255, 22%, 4%) 100%
-  );
   --almost-white: hsl(252, 11%, 91%);
   --dark-gray: hsl(248, 10%, 15%);
   --grey: hsl(251, 9%, 53%);
@@ -23,12 +18,17 @@
 }
 
 body {
-  background: var(--background);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(248, 15%, 11%) 0%,
+    hsl(255, 22%, 4%) 100%
+  );
   color: var(--almost-white);
   font-family: var(--font);
   font-weight: 700;
   font-size: calc(16rem / 16);
   line-height: calc(21rem / 16);
+  min-height: 100vh;
 }
 
 button {
@@ -308,8 +308,9 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
 
 .btn {
   background: var(--neon-green);
+  border: 2px solid var(--neon-green);
+  height: 65px;
   color: var(--dark-gray);
-  border: 2px solid #a4ffaf;
   margin-top: 16px;
   display: flex;
   justify-content: center;
