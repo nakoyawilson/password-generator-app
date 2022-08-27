@@ -120,6 +120,8 @@ svg {
 }
 
 .copy-icon {
+  /* border: 1px solid red; */
+  width: 17.5px;
   height: 20px;
 }
 
@@ -396,6 +398,7 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
   }
 
   .copy-icon {
+    width: 21px;
     height: 24px;
   }
 
