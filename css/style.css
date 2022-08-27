@@ -2,6 +2,12 @@
 
 :root {
   --font: "JetBrains Mono", monospace;
+  /* --background: linear-gradient(
+    180deg,
+    hsl(248, 15%, 11%) 0%,
+    hsl(255, 22%, 4%) 100%
+  ); */
+  --background: hsl(255, 22%, 4%);
   --almost-white: hsl(252, 11%, 91%);
   --dark-gray: hsl(248, 10%, 15%);
   --grey: hsl(251, 9%, 53%);
@@ -13,14 +19,12 @@
 }
 
 /* General Styles */
-*,
-*::after,
-*::before {
+* {
   box-sizing: border-box;
 }
 
 body {
-  background: var(--very-dark-grey);
+  background: var(--background);
   color: var(--almost-white);
   font-family: var(--font);
   font-weight: 700;
