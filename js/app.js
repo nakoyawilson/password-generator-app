@@ -113,11 +113,11 @@ passwordGenerator.addEventListener("submit", (e) => {
       );
     }
   });
-  // TODO: Prevent form from submitting if password length is 0 or no boxes checked
   if (passwordLength === 0 || numberChecked === 0) {
-    return;
+    return false;
   }
   // TODO: guarantee at least 1 of each character type
+  copyButton.disabled = false;
   const passwordCharacters = [];
   for (let i = 0; i < passwordLength; i++) {
     const randomNumber = Math.floor(Math.random() * characterList.length);

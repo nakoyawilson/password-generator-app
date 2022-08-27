@@ -23,7 +23,12 @@
         <h2 id="password-string" class="password">P4$5W0rD!</h2>
         <div class="copy-wrapper">
           <span id="copy-text" class="copy-text">Copied</span>
-          <button aria-label="Copy password" id="copy-button" class="copy-btn">
+          <button
+            aria-label="Copy password"
+            id="copy-button"
+            class="copy-btn"
+            disabled
+          >
             <svg
               width="21"
               height="24"
@@ -56,6 +61,9 @@
         </div>
         <div class="checkbox-wrapper">
           <div class="checkbox-label-wrapper">
+            <label for="uppercase" class="form-label"
+              >Include Uppercase Letters</label
+            >
             <div class="checkbox-container">
               <input
                 type="checkbox"
@@ -65,11 +73,11 @@
               />
               <span class="custom-checkbox"></span>
             </div>
-            <label for="uppercase" class="form-label"
-              >Include Uppercase Letters</label
-            >
           </div>
           <div class="checkbox-label-wrapper">
+            <label for="lowercase" class="form-label"
+              >Include Lowercase Letters</label
+            >
             <div class="checkbox-container">
               <input
                 type="checkbox"
@@ -79,11 +87,9 @@
               />
               <span class="custom-checkbox"></span>
             </div>
-            <label for="lowercase" class="form-label"
-              >Include Lowercase Letters</label
-            >
           </div>
           <div class="checkbox-label-wrapper">
+            <label for="numbers" class="form-label">Include Numbers</label>
             <div class="checkbox-container">
               <input
                 type="checkbox"
@@ -93,9 +99,9 @@
               />
               <span class="custom-checkbox"></span>
             </div>
-            <label for="numbers" class="form-label">Include Numbers</label>
           </div>
           <div class="checkbox-label-wrapper">
+            <label for="symbols" class="form-label">Include Symbols</label>
             <div class="checkbox-container">
               <input
                 type="checkbox"
@@ -105,7 +111,6 @@
               />
               <span class="custom-checkbox"></span>
             </div>
-            <label for="symbols" class="form-label">Include Symbols</label>
           </div>
         </div>
         <div class="strength-wrapper">

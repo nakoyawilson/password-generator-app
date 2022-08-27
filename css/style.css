@@ -69,6 +69,11 @@ img {
   line-height: calc(24rem / 16);
 }
 
+.copy-btn:disabled {
+  /* opacity: 0.25; */
+  cursor: default;
+}
+
 .copy-text {
   font-size: calc(18rem / 16);
   line-height: calc(24rem / 16);
@@ -192,7 +197,9 @@ img {
 
 .checkbox-label-wrapper {
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
 }
@@ -219,6 +226,7 @@ input[type="checkbox"] {
   width: 100%;
   border: 2px solid var(--almost-white);
   background: var(--dark-grey);
+  transition: all 0.5s ease-in-out;
 }
 
 input[type="checkbox"]:checked + .custom-checkbox {
@@ -333,6 +341,7 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
   .form-label {
     font-size: calc(18rem / 16);
     line-height: calc(24rem / 16);
+    cursor: pointer;
   }
 
   .strength-text {
@@ -349,6 +358,10 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
   .password-wrapper {
     margin-top: 31px;
     padding: 19px 32px;
+  }
+
+  .copy-btn:disabled:hover {
+    color: var(--neon-green);
   }
 
   .copy-btn:hover {
@@ -374,6 +387,13 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
 
   .checkbox-label-wrapper {
     gap: 24px;
+  }
+
+  .form-label:hover
+    + .checkbox-container
+    > input[type="checkbox"]
+    + .custom-checkbox {
+    border-color: var(--neon-green);
   }
 
   .strength-wrapper {
