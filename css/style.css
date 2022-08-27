@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap");
+
+:root {
+  --font: "JetBrains Mono", monospace;
+  --almost-white: hsl(252, 11%, 91%);
+  --dark-gray: hsl(248, 10%, 15%);
+  --grey: hsl(251, 9%, 53%);
+  --neon-green: hsl(127, 100%, 82%);
+  --orange: hsl(13, 95%, 66%);
+  --red: hsl(0, 91%, 63%);
+  --very-dark-grey: hsl(248, 15%, 11%);
+  --yellow: hsl(42, 91%, 68%);
+}
+
+/* General Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--very-dark-grey);
+  color: var(--almost-white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: calc(16rem / 16);
+  line-height: calc(21rem / 16);
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+}
+
+/* Typography */
+.title {
+  text-align: center;
+  color: var(--grey);
+}
+
+.password {
+  font-size: calc(24rem / 16);
+  line-height: calc(32rem / 16);
+  opacity: 0.25;
+}
+
+.password.active {
+  opacity: 1;
+}
+
+.strength {
+  color: var(--grey);
+}
+
+.strength-text {
+  font-size: calc(18rem / 16);
+  line-height: calc(24rem / 16);
+}
+
+.copy-text {
+  font-size: calc(18rem / 16);
+  line-height: calc(24rem / 16);
+  color: var(--neon-green);
+  text-transform: uppercase;
+  display: none;
+}
+
+.copy-text.active {
+  display: block;
+}
+
+/* Layout */
+.container {
+  width: min(91.46667%, 343px);
+  margin: 64px auto;
+}
+
+.password-wrapper {
+  background: var(--dark-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding: 17px 16px 15px;
+}
+
+.copy-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.copy-icon {
+  height: 20px;
+}
+
+.generator {
+  background: var(--dark-gray);
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.length-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.length-value {
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--neon-green);
+}
+
+.slider {
+  display: block;
+}
+
+.checkbox-wrapper {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.strength-wrapper {
+  padding: 14px 16px;
+  background: var(--very-dark-grey);
+  margin-top: 32px;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.strength-indicator-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.strength-indicator {
+  display: flex;
+  gap: 8px;
+}
+
+.strength-bar {
+  height: 28px;
+  width: 10px;
+  border: 2px solid var(--almost-white);
+}
+
+.strength-too-weak {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.strength-weak {
+  border-color: var(--orange);
+  background: var(--orange);
+}
+
+.strength-medium {
+  border-color: var(--yellow);
+  background: var(--yellow);
+}
+
+.strength-strong {
+  border-color: var(--neon-green);
+  background: var(--neon-green);
+}
+
+.btn {
+  background: var(--neon-green);
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 18px 18px 17px;
+}
+
+.arrow-icon {
+  pointer-events: none;
+  height: 12px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 485px) {
+  button:hover {
+    cursor: pointer;
+  }
+  /* Typography */
+  .title {
+    font-size: calc(24rem / 16);
+    line-height: calc(32rem / 16);
+  }
+
+  .password {
+    font-size: calc(32rem / 16);
+    line-height: calc(42rem / 16);
+  }
+
+  .form-label {
+    font-size: calc(18rem / 16);
+    line-height: calc(24rem / 16);
+  }
+
+  .strength-text {
+    font-size: calc(24rem / 16);
+    line-height: calc(32rem / 16);
+  }
+
+  /* Layout */
+  .container {
+    width: min(91.46667%, 540px);
+    margin: 133px auto;
+  }
+
+  .password-wrapper {
+    margin-top: 31px;
+    padding: 19px 32px;
+  }
+
+  .copy-icon {
+    height: 24px;
+  }
+
+  .generator {
+    margin-top: 24px;
+    padding: 24px 32px 32px;
+  }
+
+  .checkbox-wrapper {
+    gap: 20px;
+  }
+
+  .strength-wrapper {
+    padding: 21px 32px 20px;
+  }
+
+  .btn {
+    margin-top: 32px;
+    gap: 24px;
+    padding: 21px 21px 20px;
+  }
+
+  .arrow-icon {
+    pointer-events: none;
+    height: 12px;
+  }
+}
