@@ -74,7 +74,7 @@ svg {
 }
 
 .copy-btn:disabled {
-  /* opacity: 0.25; */
+  opacity: 0.25;
   cursor: default;
 }
 
@@ -310,7 +310,6 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
 .btn {
   background: var(--neon-green);
   border: 2px solid var(--neon-green);
-  height: 65px;
   color: var(--dark-gray);
   margin-top: 16px;
   display: flex;
@@ -412,8 +411,17 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
     border-color: var(--neon-green);
   }
 
+  .custom-checkbox:hover {
+    cursor: pointer;
+    border-color: var(--neon-green);
+  }
+
   .strength-wrapper {
     padding: 21px 32px 20px;
+  }
+
+  .strength-indicator-wrapper {
+    min-height: 32px;
   }
 
   .btn {

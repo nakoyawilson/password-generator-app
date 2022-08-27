@@ -2,6 +2,7 @@ const charLength = document.querySelector("#char-length");
 const checkboxes = document.querySelectorAll("input[name='options']");
 const copyButton = document.querySelector("#copy-button");
 const copyText = document.querySelector("#copy-text");
+const customCheckboxes = document.querySelectorAll(".custom-checkbox");
 const passwordGenerator = document.querySelector("#password-generator");
 const passwordString = document.querySelector("#password-string");
 const rangeLength = document.querySelector("#length");
@@ -91,12 +92,19 @@ copyButton.addEventListener("click", () => {
   }, 2000);
 });
 
+customCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+    checkbox.previousElementSibling.checked =
+      !checkbox.previousElementSibling.checked;
+  });
+});
+
 passwordGenerator.addEventListener("submit", (e) => {
   e.preventDefault();
   strengthBars.forEach((ele) => {
     ele.className = "strength-bar";
   });
-  const passwordLength = rangeLength.value;
+  const passwordLength = Number(rangeLength.value);
   const characterList = [];
   let numberChecked = 0;
   checkboxes.forEach((checkbox) => {
