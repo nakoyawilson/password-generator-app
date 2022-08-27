@@ -13,8 +13,9 @@
 }
 
 /* General Styles */
-
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -34,7 +35,7 @@ button {
   font: inherit;
 }
 
-img {
+svg {
   display: block;
 }
 
@@ -349,6 +350,11 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
     cursor: pointer;
   }
 
+  .strength {
+    font-size: calc(18rem / 16);
+    line-height: calc(24rem / 16);
+  }
+
   .strength-text {
     font-size: calc(24rem / 16);
     line-height: calc(32rem / 16);
@@ -409,6 +415,8 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
     margin-top: 32px;
     gap: 24px;
     padding: 21px 21px 20px;
+    font-size: calc(18rem / 16);
+    line-height: calc(24rem / 16);
   }
 
   .btn:hover {
