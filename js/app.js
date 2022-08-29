@@ -69,7 +69,7 @@ const updateSliderColor = (slider) => {
   slider.style.background = `linear-gradient(to right, hsl(127, 100%, 82%) 0%, hsl(127, 100%, 82%) ${value}%, hsl(248, 15%, 11%) ${value}%, hsl(248, 15%, 11%) 100%`;
 };
 
-rangeLength.addEventListener("change", () => {
+rangeLength.addEventListener("input", () => {
   charLength.textContent = rangeLength.value;
   updateSliderColor(rangeLength);
 });
